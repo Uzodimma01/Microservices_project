@@ -10,7 +10,10 @@ dockerimage=house-prediction
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl create deployment $dockerimage --image=$dockerpath
+kubectl run $dockerimage\
+    --generator=run-pod/v1\
+    --image=$dockerpath\
+    --port=80 --labels app=$dockerimage
 
 # Step 3:
 # List kubernetes pods
@@ -18,6 +21,6 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl expose deployment $dockerimage --type=LoadBalancer --port=8080
+kubectl port-forward $dockerimage 8000:80
 
 kubectl get services
