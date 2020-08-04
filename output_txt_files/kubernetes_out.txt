@@ -1,6 +1,12 @@
 <paste log output from Kubernetes-mediated prediction, here>
-Forwarding from 127.0.0.1:8000 -> 80
-Forwarding from [::1]:8000 -> 80
-Handling connection for 8000
-Handling connection for 8000
 
+(.microservices) ec2-user:~/environment/Microservices_project (master) $ kubectl logs house-prediction
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 177-746-883
